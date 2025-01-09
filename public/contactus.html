@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Medical Emergency</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f8f9fa;
+        }
+        .navbar {
+    
+    background: linear-gradient(90deg, #000000, #020a00);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px 8px 0 0; /* Only top corners rounded */
+    flex-wrap: wrap;
+}
+
+.navbar-brand a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-nav li {
+    position: relative;
+}
+
+.navbar-nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    background: #f0f0f0;
+    color: #4a148c;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-nav a:hover,
+.navbar-nav a:focus {
+    color: #ffffff;
+    background: #7b1fa2;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #ab47bc;
+    transition: width 0.3s;
+}
+
+.navbar-nav a:hover::after {
+    width: 100%;
+}
+    
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info p {
+            margin: 0.5rem 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, textarea, button {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .emergency-number {
+            font-size: 1.2rem;
+            color: #dc3545;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+        }
+
+
+        /* Footer Styles */
+.footer {
+    background: linear-gradient(to top, #004d80, #0066b2), url('images/medical-bg.jpg') no-repeat center center/cover;
+    color: #ffffff;
+    padding: 40px 20px;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: left;
+}
+
+.footer-info,
+.footer-links,
+.footer-social {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #ffcc00; /* Golden accent */
+}
+
+.footer-info p {
+    line-height: 1.6;
+    font-size: 1em;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links ul li {
+    margin: 10px 0;
+}
+
+.footer-links ul li a {
+    color: #d1e0f2;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.footer-social .social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social .social-icons a img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    padding: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.footer-social .social-icons a img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 3px 8px rgba(255, 255, 255, 0.5);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #d1e0f2;
+}
+
+.footer-bottom a {
+    color: #ffffff;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.footer-bottom a:hover {
+    text-decoration: none;
+}
+
+
+    </style>
+
+
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a href="#">SafeHarbour</a>
+            </div>
+            <ul class="navbar-nav">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+                <li><a href="signup.html">Sign-in</a></li>
+                <li><a href="docsignin.html">Doctor Sign-in</a></li>
+                <li><a href="myprofile.html">My Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <p><strong>Emergency Helpline:</strong> <span class="emergency-number">123-456-7890</span></p>
+            <p>Email: support@medicalemergency.com</p>
+            <p>Address: 123 Health St., City, Country</p>
+        </div>
+
+        <form id="contactForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (name && email && message) {
+                alert('Thank you, ' + name + '! Your message has been received.');
+                // Here you can add AJAX or other backend integration for sending the form data.
+            } else {
+                alert('Please fill out all fields.');
+            }
+        });
+    </script>
+
+<footer class="footer">
+    <div class="footer-container">
+        <!-- About Section -->
+        <div class="footer-info">
+            <h3 class="footer-title">About SafeHarbour</h3>
+            <p>SafeHarbour is your trusted companion in medical emergencies. From managing your medical records to providing instant assistance, we are here to safeguard your health.</p>
+        </div>
+
+        <!-- Quick Links Section -->
+        <div class="footer-links">
+            <h3 class="footer-title">Quick Links</h3>
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="footer-social">
+            <h3 class="footer-title">Follow Us</h3>
+            <div class="social-icons">
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                    <img src="instag.png" alt="Instagram Logo">
+                </a>
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                    <img src="fac1.png" alt="Facebook Logo">
+                </a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                    <img src="twitter.png" alt="Twitter Logo">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Bottom Section -->
+    <div class="footer-bottom">
+        <p>&copy; 2024 SafeHarbour. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:support@safeharbour.com">support@safeharbour.com</a></p>
+    </div>
+</footer>
+
+
+</body>
+</html>

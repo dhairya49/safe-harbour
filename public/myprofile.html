@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | SafeHarbour</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #e0f7fa, #80deea);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #333;
+        }
+
+        .navbar {
+            background: linear-gradient(90deg, #000000, #020a00);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: black;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .navbar-brand a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .navbar-nav {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar-nav a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 400;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background: #f0f0f0;
+            color: #4a148c;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+        }
+
+        .navbar-nav a:hover {
+            color: #ffffff;
+            background: #7b1fa2;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 400px;
+            margin-top: 100px;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: #005580;
+        }
+
+        .login-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .login-container input {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .login-container button {
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background: #00796b;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-container button:hover {
+            background: #004d40;
+        }
+
+        .login-container a {
+            color: #00796b;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .login-container a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+    background: linear-gradient(to top, #004d80, #0066b2);
+    color: #ffffff;
+    padding: 40px 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+.footer {
+    background: linear-gradient(to top, #004d80, #0066b2);
+    color: #ffffff;
+    padding: 20px 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9em;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.footer-info, .footer-links, .footer-social {
+    flex: 1;
+    min-width: 150px;
+    margin: 0 10px;
+}
+
+.footer-info h3, .footer-links h3, .footer-social h3 {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+}
+
+.footer-info p {
+    line-height: 1.4;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin: 5px 0;
+}
+
+.footer-links ul li a {
+    color: #d1e0f2;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #ffffff;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.social-icons a img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    padding: 3px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.4);
+}
+
+/* Footer Styles */
+.footer {
+    background: linear-gradient(to top, #004d80, #0066b2), url('images/medical-bg.jpg') no-repeat center center/cover;
+    color: #ffffff;
+    padding: 40px 20px;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: left;
+}
+
+.footer-info,
+.footer-links,
+.footer-social {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #ffcc00; /* Golden accent */
+}
+
+.footer-info p {
+    line-height: 1.6;
+    font-size: 1em;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links ul li {
+    margin: 10px 0;
+}
+
+.footer-links ul li a {
+    color: #d1e0f2;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.footer-social .social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social .social-icons a img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    padding: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.footer-social .social-icons a img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 3px 8px rgba(255, 255, 255, 0.5);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #d1e0f2;
+}
+
+.footer-bottom a {
+    color: #ffffff;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.footer-bottom a:hover {
+    text-decoration: none;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="#">SafeHarbour</a>
+        </div>
+        <ul class="navbar-nav">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+            <li><a href="signup.html">Sign-in</a></li>
+            <li><a href="docsignin.html">Doctor Sign-in</a></li>
+            <li><a href="myprofile.html">My Profile</a></li>
+        </ul>
+    </nav>
+
+    <div class="login-container">
+        <h2>Login to SafeHarbour</h2>
+        <form id="login">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="signup.html">Register here</a></p>
+    </div>
+
+
+    <div id="adminPanel" style="display:none;">
+        <h1>Admin Panel</h1>
+        <table id="userTable" border="1">
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Password</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <button onclick="logout()">Logout</button>
+      </div>
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3 class="footer-title">About SafeHarbour</h3>
+                <p>SafeHarbour is your trusted companion in medical emergencies. From managing your medical records to providing instant assistance, we are here to safeguard your health.</p>
+            </div>
+            <div class="footer-links">
+                <h3 class="footer-title">Quick Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                    <li><a href="form.html">Admission Form</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3 class="footer-title">Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram"><img src="instag.png" alt="Instagram Logo"></a>
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook"><img src="fac1.png" alt="Facebook Logo"></a>
+                    <a href="https://twitter.com" target="_blank" aria-label="Twitter"><img src="twitter.png" alt="Twitter Logo"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 SafeHarbour. All rights reserved.</p>
+            <p>Contact us: <a href="mailto:support@safeharbour.com">support@safeharbour.com</a></p>
+        </div>
+    </footer>
+    <script src="script.js"></Script>
+</body>
+</html>

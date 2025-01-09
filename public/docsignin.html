@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="#">SafeHarbour</a>
+        </div>
+        <ul class="navbar-nav">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+            <li><a href="signup.html">signin</a></li>
+            <li><a href="docsignin.html">Doctor Sign-in</a></li>
+            <li><a href="myprofile.html">My Profile</a></li>
+           
+          
+        </ul>
+    </nav>
+    <!-- Sign-in Form Container -->
+    <div class="container" >
+        <h1>Signin</h1>
+        <form id="signup" method="post" name="signup" action="/signup">
+            <div class="form-group">
+                <label for="First Name">First Name:</label>
+                <input type="text" id="First Name" name="First Name" required>
+                <span class="error-message" id="First NameError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="Last Name">Last Name:</label>
+                <input type="text" id="Last Name" name="Last Name" required>
+                <span class="error-message" id="Last NameError"></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error-message" id="emailError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="Phone Number">Phone Number:</label>
+                <input type="Phone Number" id="Phone Number" name="Phone Number" required>
+                <span class="error-message" id="Phone NumberError"></span>
+                <div id="Phone Number" class="password-strength"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="Expertise">Expertise:</label>
+                <input type="Expertise" id="Expertise" name="Expertise" required>
+                <span class="error-message" id="ExpertiseError"></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="Operational Address">Operational Address:</label>
+                <input type="text" id="Operational Address" name="Operational Address" required>
+                <span class="error-message" id="Operational AddressError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="Password">Password:</label>
+                <input type="text" id="Password" name="Password" required>
+                <span class="error-message" id="Password"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="Confirm Password">Confirm Password:</label>
+                <input type="text" id="Confirm Password" name="Confirm Password" required>
+                <span class="error-message" id="Confirm PasswordError"></span>
+            </div>
+            
+
+    
+        <button type="submit">Submit</button>
+    </>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- About Section -->
+            <div class="footer-info">
+                <h3 class="footer-title">About SafeHarbour</h3>
+                <p>SafeHarbour is your trusted companion in medical emergencies. From managing your medical records to providing instant assistance, we are here to safeguard your health.</p>
+            </div>
+    
+            <!-- Quick Links Section -->
+            <div class="footer-links">
+                <h3 class="footer-title">Quick Links</h3>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                </ul>
+            </div>
+    
+            <!-- Social Media Section -->
+            <div class="footer-social">
+                <h3 class="footer-title">Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                        <img src="instag.png" alt="Instagram Logo">
+                    </a>
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                        <img src="fac1.png" alt="Facebook Logo">
+                    </a>
+                    <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                        <img src="twitter.png" alt="Twitter Logo">
+                    </a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Footer Bottom Section -->
+        <div class="footer-bottom">
+            <p>&copy; 2024 SafeHarbour. All rights reserved.</p>
+            <p>Contact us: <a href="mailto:support@safeharbour.com">support@safeharbour.com</a></p>
+        </div>
+    </footer>
+    
+
+    <script src="script.js"></script>
+</body>
+</html> 

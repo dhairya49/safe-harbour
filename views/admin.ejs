@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data</title>
+</head>
+<body>
+    <h1>Patient Data</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Phone</th>
+                <th>Medical Conditions</th>
+                <th>Medications</th>
+                <th>Allergies</th>
+                <th>Emergency Contact</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="user-table">
+            <% users.forEach(user => { %>
+                <tr data-id="<%= user.email %>">
+                    <td><input type="text" value="<%= user.username %>" class="editable" name="username"></td>
+                    <td><input type="text" value="<%= user.email %>" class="editable" name="email"></td>
+                    <td><input type="text" value="<%= user.firstName %>" class="editable" name="firstName"></td>
+                    <td><input type="text" value="<%= user.lastName %>" class="editable" name="lastName"></td>
+                    <td><input type="number" value="<%= user.age %>" class="editable" name="age"></td>
+                    <td><input type="text" value="<%= user.gender %>" class="editable" name="gender"></td>
+                    <td><input type="text" value="<%= user.phone %>" class="editable" name="phone"></td>
+                    <td><input type="text" value="<%= user.medicalConditions %>" class="editable" name="medicalConditions"></td>
+                    <td><input type="text" value="<%= user.medications %>" class="editable" name="medications"></td>
+                    <td><input type="text" value="<%= user.allergies %>" class="editable" name="allergies"></td>
+                    <td>
+                        <input type="text" value="<%= user.emergencyContact.name %>" class="editable" name="emergencyContactName">
+                        (<input type="text" value="<%= user.emergencyContact.relationship %>" class="editable" name="emergencyContactRelationship">) 
+                        - <input type="text" value="<%= user.emergencyContact.phone %>" class="editable" name="emergencyContactPhone">
+                    </td>
+                    <td>
+                        <button class="save-btn">Save</button>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+
+<script>
+    async function fetchUsers() {
+        try {
+            const response = await fetch('/api/users');
+            const users = await response.json();
+            console.log('Users:', users);
+
+            // Display data dynamically (example)
+            const table = document.querySelector('tbody');
+            users.forEach(user => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${user.username}</td>
+                    <td>${user.email}</td>
+                    <td>${user.firstName}</td>
+                    <td>${user.lastName}</td>
+                    <td>${user.age}</td>
+                    <td>${user.gender}</td>
+                    <td>${user.phone}</td>
+                    <td>${user.emergencyContact.name} (${user.emergencyContact.relationship}) - ${user.emergencyContact.phone}</td>
+                `;
+                table.appendChild(row);
+            });
+        } catch (err) {
+            console.error('Error fetching users:', err);
+        }
+    }
+
+    // Call the function on page load
+    window.onload = fetchUsers;
+
+    document.querySelectorAll('.save-btn').forEach(button => {
+        button.addEventListener('click', async () => {
+            const row = button.closest('tr');
+            const userEmail = row.getAttribute('data-email'); // Get email from data attribute
+            const inputs = row.querySelectorAll('.editable');
+
+            const updates = {};
+            inputs.forEach(input => {
+                updates[input.name] = input.value;
+            });
+
+            try {
+                const response = await fetch(`/api/users/${userEmail}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(updates),
+                });
+                const result = await response.json();
+
+                if (result.success) {
+                    alert('User updated successfully!');
+                } else {
+                    alert('Failed to update user: ' + result.message);
+                }
+            } catch (error) {
+                console.error('Error updating user:', error);
+            }
+        });
+    });
+
+
+</script>
+
+</html>

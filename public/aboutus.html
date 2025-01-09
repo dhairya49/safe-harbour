@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Medical Emergency</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <link rel="stylesheet" href="aboutus.css">
+    
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #e0f7fa, #80deea); /* Professional gradient */
+            color: #333;
+        }
+        .navbar {
+    
+    background: linear-gradient(90deg, #000000, #020a00);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px 8px 0 0; /* Only top corners rounded */
+    flex-wrap: wrap;
+}
+
+.navbar {
+    
+    background: linear-gradient(90deg, #000000, #020a00);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px 8px 0 0; /* Only top corners rounded */
+    flex-wrap: wrap;
+}
+
+.navbar-brand a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-nav li {
+    position: relative;
+}
+
+.navbar-nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    background: #f0f0f0;
+    color: #4a148c;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-nav a:hover,
+.navbar-nav a:focus {
+    color: #ffffff;
+    background: #7b1fa2;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #ab47bc;
+    transition: width 0.3s;
+}
+
+.navbar-nav a:hover::after {
+    width: 100%;
+}
+
+.intro {
+            max-width: 1200px;
+            margin: auto;
+            padding: 2em;
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent background for readability */
+            border-radius: 8px;
+            position: relative;
+            background-image: url('safe-harbour/back.png'); /* Add your image path */
+            background-size: cover;
+            background-position: center;
+            color: white; /* To make text visible over the image */
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); /* Add text shadow for better readability */
+        }
+        
+        .team {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2em;
+            justify-content: center;
+        }
+        .team-member {
+            text-align: center;
+            width: 200px;
+            padding: 1em;
+            background: #f2f2f2;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .team-member img {
+            width: 100%;
+            border-radius: 50%;
+            margin-bottom: 0.5em;
+        }
+        footer {
+            background-color: #005580;
+            color: white;
+            padding: 1em;
+            text-align: center;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="#">SafeHarbour</a>
+        </div>
+        <ul class="navbar-nav">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+            <li><a href="signup.html">Sign-in</a></li>
+            <li><a href="docsignin.html">Doctor Sign-in</a></li>
+            <li><a href="myprofile.html">My Profile</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section class="intro">
+            <h2>Welcome to Medical Emergency</h2>
+            <p>Located in the heart of Ahmedabad, our dedicated team of medical professionals is committed to providing prompt and effective emergency care. We are here to support you and your loved ones with the highest level of medical attention in times of urgent need.</p>
+        </section>
+
+        <section class="team">
+            <h2></h2>
+            <div class="team-member">
+                <img src="tej.jpg" alt="Tej Gohil">
+                <h3>Tej Gohil</h3>
+                <p>Project Mentor</p>
+            </div>
+            <div class="team-member">
+                <img src="siddh.jpg" alt="Siddh Soni">
+                <h3>Siddh Soni</h3>
+                <p>Frontend developer</p>
+            </div>
+            <div class="team-member">
+                <img src="siddhraj.jpg" alt="Siddhrajsinh Chauhan">
+                <h3>Siddhrajsinh Chauhan</h3>
+                <p>Full-stack developer</p>
+            </div>
+            <div class="team-member">
+                <img src="maharudra.jpg" alt="Maharudra">
+                <h3>Maharudra</h3>
+                <p>Research & Development</p>
+            </div>
+            <div class="team-member">
+                <img src="harshi.jpg" alt="Harshita Tiwari">
+                <h3>Harshita Tiwari</h3>
+                <p>Frontend Developer</p>
+            </div>
+            <div class="team-member">
+                <img src="gazal.jpg" alt="Gazal Shah">
+                <h3>Gazal Shah</h3>
+                <p>Backend Developer</p>
+            </div>
+            <div class="team-member">
+                <img src="dh.jpg" alt="Dhairya">
+                <h3>Dhairya</h3>
+                <p>Backend Developer</p>
+            </div>
+            <div class="team-member">
+                <img src="jay.jpg" alt="Jayraj">
+                <h3>Jayraj</h3>
+                <p>Full-stack Developer</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- About Section -->
+            <div class="footer-info">
+                <h3 class="footer-title">About SafeHarbour</h3>
+                <p>SafeHarbour is your trusted companion in medical emergencies. From managing your medical records to providing instant assistance, we are here to safeguard your health.</p>
+            </div>
+    
+            <!-- Quick Links Section -->
+            <div class="footer-links">
+                <h3 class="footer-title">Quick Links</h3>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                </ul>
+            </div>
+    
+            <!-- Social Media Section -->
+            <div class="footer-social">
+                <h3 class="footer-title">Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                        <img src="instag.png" alt="Instagram Logo">
+                    </a>
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                        <img src="fac1.png" alt="Facebook Logo">
+                    </a>
+                    <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                        <img src="twitter.png" alt="Twitter Logo">
+                    </a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Footer Bottom Section -->
+        <div class="footer-bottom">
+            <p>&copy; 2024 SafeHarbour. All rights reserved.</p>
+            <p>Contact us: <a href="mailto:support@safeharbour.com">support@safeharbour.com</a></p>
+        </div>
+    </footer>
+    
+</body>
+</html>

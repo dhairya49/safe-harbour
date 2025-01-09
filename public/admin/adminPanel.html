@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeHarbour Layout</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #7f7f7f;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            margin: 0;
+        }
+
+        .navbar button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .navbar .support-btn {
+            background-color: white;
+            color: black;
+            border: 2px solid purple;
+        }
+
+        .navbar .admin-btn {
+            background-color: white;
+            color: black;
+            margin-left: 10px;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .table-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .table-header {
+            background-color: #3366cc;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 18px;
+            text-align: center;
+            width: 200px;
+        }
+
+        .table-row {
+            background-color: #d3d3d3;
+            padding: 10px 20px;
+            border-radius: 5px;
+            width: 200px;
+            text-align: center;
+        }
+
+        .stats-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .stats-box {
+            background-color: orange;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 24px;
+            font-weight: bold;
+            color: black;
+            text-align: center;
+        }
+
+        .stats-box.red {
+            background-color: red;
+            color: white;
+        }
+
+        .stats-box.pink {
+            background-color: pink;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>SafeHarbour</h1>
+        <div>
+            <button class="support-btn">Support</button>
+            <button class="admin-btn">Admin</button>
+        </div>
+    </div>
+    <div class="content">
+        <div class="table-container">
+            <div class="table-header">Doctor</div>
+            <div class="table-row"></div>
+            <div class="table-row"></div>
+            <div class="table-row"></div>
+        </div>
+        <div class="table-container">
+            <div class="table-header">Patient</div>
+            <div class="table-row"></div>
+            <div class="table-row"></div>
+            <div class="table-row"></div>
+        </div>
+        <div class="stats-container">
+            <div class="stats-box">69 PEOPLE SAVED</div>
+            <div class="stats-box red">69 PEOPLE SAVED</div>
+            <div class="stats-box pink">69 PEOPLE SAVED</div>
+        </div>
+    </div>
+</body>
+</html>
