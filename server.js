@@ -69,6 +69,10 @@ mongoose.connect(mongoURI)
         }
     }));
 
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'home.html'));
+});
+
 //login backend code start
 app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'myprofile.html'));
