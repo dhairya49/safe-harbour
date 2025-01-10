@@ -39,6 +39,11 @@ const publicKey = process.env.MONGODB_PUBLIC_KEY;
 const privateKey = process.env.MONGODB_PRIVATE_KEY;
 const projectId = process.env.MONGODB_PROJECT_ID;
 
+// Route to serve home.html as the homepage
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'home.html'));
+  });
+
 
 
 // Connect to MongoDB
