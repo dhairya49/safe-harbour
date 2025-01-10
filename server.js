@@ -41,56 +41,6 @@ const projectId = process.env.MONGODB_PROJECT_ID;
 
 
 
-
-
-// IP whitelisting(Error 401 not working)
-const timestamp = Math.floor(Date.now() / 1000);
-const signature = crypto
-    .createHmac('sha256', privateKey)
-    .update(`${timestamp}${publicKey}`)
-    .digest('hex');
-
-async function whitelistCurrentIP() {
-    try {
-        const response = await axios.get('https://ipinfo.io');
-        const ip = response.data.ip;
-
-        const authHeader = `Basic ${Buffer.from(`${publicKey}:${privateKey}`).toString('base64')}`;
-
-        const whitelistResponse = await axios.post(
-            `https://cloud.mongodb.com/api/atlas/v1.0/groups/${projectId}/accessList`,
-            {
-                ipAddress: ip,
-                comment: "Dynamic IP Address"
-            },
-            {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `MongoDB ${publicKey}:${signature}:${timestamp}`
-                }
-            }
-        );
-
-        console.log('IP address whitelisted successfully:', ip);
-    } catch (err) {
-        console.error('Failed to whitelist IP address:', err.response ? err.response.data : err.message);
-    }
-}
-
-whitelistCurrentIP().then(() => {
-    mongoose.connect(mongoURI, {
-        useUnifiedTopology: true 
-    }).then(() => {
-        console.log('Connected to MongoDB');
-    }).catch((error) => {
-        console.error('Failed to connect to MongoDB:', error.message);
-    });
-});
-
-//IP whitelist end
-
-
-
 // Connect to MongoDB
 mongoose.connect(mongoURI)
      .then(() => {
